@@ -2,43 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Contracts\OccupationParser;
-use Illuminate\Foundation\Bus\DispatchesJobs;
+use App\Services\OnetOccupationService;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class OccupationsController extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    private $occService;
 
-    private $occparser;
-
-    public function __construct(OccupationParser $parser)
+    public function __construct(OnetOccupationService $occService)
     {
-        $this->occparser = $parser;
+        $this->occService = $occService;
     }
-
-    public function index()
+    public function list()
     {
-        return $this->occparser->list();
+        return $this->occService->list();
     }
 
     public function compare(Request $request)
     {
-        $this->occparser->setScope('skills');
-        $occupation_1 = $this->occparser->get($request->get('occupation_1'));
-        $occupation_2 = $this->occparser->get($request->get('occupation_2'));
+        $validated = $request->validate([
+            'occupation_1' => 'required|string',
+            'occupation_2' => 'required|string',
+            'scope' => 'string',
+        ]);
 
-        /** IMPLEMENT COMPARISON **/
-        $match = 68;
-        /** IMPLEMENT COMPARISON **/
+        $scope = $validated['scope'] ?? '';
 
-        return [
-            'occupation_1' => $occupation_1,
-            'occupation_2' => $occupation_2,
-            'match' => $match
-        ];
+        return $this->occService->compare(
+            $validated['occupation_1'],
+            $validated['occupation_2'],
+            $scope,
+        );
     }
 }
