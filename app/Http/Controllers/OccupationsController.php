@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\OnetOccupationService;
+use App\Services\OnetOccupationParser;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
 class OccupationsController extends BaseController
 {
-    private $occService;
+    private $occParser;
 
-    public function __construct(OnetOccupationService $occService)
+    public function __construct(OnetOccupationParser $occParser)
     {
-        $this->occService = $occService;
+        $this->occParser = $occParser;
     }
     public function list()
     {
-        return $this->occService->list();
+        return $this->occParser->list();
     }
 
     public function compare(Request $request)
@@ -27,12 +27,11 @@ class OccupationsController extends BaseController
             'scope' => 'string',
         ]);
 
-        $scope = $validated['scope'] ?? '';
+        $scope = $validated['scope'] ?? 'skills';
 
-        return $this->occService->compare(
+        return $this->occParser->setScope($scope)->compare(
             $validated['occupation_1'],
-            $validated['occupation_2'],
-            $scope,
+            $validated['occupation_2']
         );
     }
 }
