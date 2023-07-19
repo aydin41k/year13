@@ -12,6 +12,6 @@
 */
 
 Route::middleware(['api'])->group(function () {
-    Route::get('/occupations', 'OccupationsController@index');
+    Route::get('/occupations', 'OccupationsController@list');
     Route::post('/compare', 'OccupationsController@compare');
 });
