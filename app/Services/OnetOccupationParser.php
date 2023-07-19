@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 class OnetOccupationParser implements OccupationParser
 {
     private string $scope = '';
-    private int $relevance_threshold = 50;
+    private int $proximity_threshold = 10;
 
     public function setScope(string $scope): OccupationParser
     {
@@ -79,12 +79,12 @@ class OnetOccupationParser implements OccupationParser
         ]);
 
         $occupation_1 = $this->get($occupation1);
-        $occupation_1_relevant_skills = $this->getRelevantSkills($occupation_1);
+        $occupation_1_skill_values = $this->getOccupationSkillValues($occupation_1);
 
         $occupation_2 = $this->get($occupation2);
-        $occupation_2_relevant_skills = $this->getRelevantSkills($occupation_2);
+        $occupation_2_skill_values = $this->getOccupationSkillValues($occupation_2);
 
-        $match = $this->getMatch($occupation_1_relevant_skills, $occupation_2_relevant_skills);
+        $match = $this->getMatch($occupation_1_skill_values, $occupation_2_skill_values);
 
         return [
             'occupation_1' => $occupation_1,
@@ -93,34 +93,56 @@ class OnetOccupationParser implements OccupationParser
         ];
     }
 
-    private function getRelevantSkills(array $occupation): array
+    /**
+     * Convert each skill to an array with the skill as the key and importance as the value
+     * to make the matching easier
+     *
+     * @param array $occupation
+     * @return array
+     */
+    private function getOccupationSkillValues(array $occupation): array
     {
-        if (!$occupation) {
-            return [];
+        $result = [];
+
+        foreach($occupation as $skill) {
+            $result[$skill[1]] = $skill[0];
         }
 
-        return array_filter($occupation, function($attribs) {
-            return (int) $attribs[0] >= $this->relevance_threshold;
-        });
+        return $result;
     }
 
+    /**
+     * Algorithm to match skills of two occupations.
+     * The logic is to count the number of skills that are
+     * within $proximity_threshold units of importance of each other.
+     * I.e., count of the skills that carry similar importance for both occupations.
+     *
+     * @param array $set_1
+     * @param array $set_2
+     * @return int
+     */
     private function getMatch(array $set_1, array $set_2): int
     {
-        $matchingSkills = array_intersect(
-            array_column($set_1, 1),
-            array_column($set_2, 1)
-        );
+        $allSkillsCount = max(count($set_1), count($set_2));
 
-        $allSkills = array_unique(array_merge(
-            array_column($set_1, 1),
-            array_column($set_2, 1)
-        ));
+        if (!$allSkillsCount) {
+            return 0;
+        }
 
-        $match = count($matchingSkills) / count($allSkills);
+        // Easiest way is to loop and count;
+        // array_reduce() gets too complicated and beats the purpose
+        $matchingSkills = [];
+
+        foreach ($set_1 as $skill => $importance) {
+            if (isset($set_2[$skill]) && abs($importance - $set_2[$skill]) <= $this->proximity_threshold) {
+                $matchingSkills[$skill] = [$importance, $set_2[$skill]];
+            }
+        }
+
+        $match = count($matchingSkills) / $allSkillsCount;
 
         Log::info('OnetOccupationParser::getMatch()', [
             'matching_skills' => $matchingSkills,
-            'all_skills' => $allSkills,
             'match' => $match
         ]);
 
