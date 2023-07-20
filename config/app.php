@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'dev' => env('APP_DEV', 'Aydin Salimov'),
+    'dev' => env('MIX_DEV', 'Aydin Salimov'),
 
     /*
     |--------------------------------------------------------------------------

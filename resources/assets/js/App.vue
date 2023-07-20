@@ -1,13 +1,17 @@
 <template>
-    <div class="body" :style="{'--brand-color': '#fbb040'}">
-        <top-bar></top-bar>
-        <transition name="fade">
-            <router-view></router-view>
-        </transition>
+    <div class="body">
+      <heading></heading>
+      <transition name="fade">
+        <router-view></router-view>
+      </transition>
+      <footer-bar :name="dev"></footer-bar>
     </div>
 </template>
 
 <style>
+    .body {
+        --brand-color: #00328d;
+    }
     .fade-enter-active, .fade-leave-active {
         transition: opacity .5s
     }
@@ -17,8 +21,14 @@
 </style>
 
 <script>
-    import TopBar from './components/TopBar';
+    import Heading from './components/Heading.vue';
+    import FooterBar from './components/FooterBar.vue';
     export default{
-        components: {TopBar}
+        components: {Heading, FooterBar},
+        data() {
+            return {
+                dev: process.env.MIX_DEV
+            }
+        }
     }
 </script>
