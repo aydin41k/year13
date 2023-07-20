@@ -10,13 +10,11 @@
                   <div class="form">
                       <select-occupation v-model="occupation_1" title="Occupation 1"></select-occupation>
                       <select-occupation v-model="occupation_2" title="Occupation 2"></select-occupation>
-                      <div class="form-group row padding-x-15">
-                        <compare-button
+                      <compare-button
                             :isLoading="loading"
                             :onClick="compare"
                             :isDisabled="!occupation_1 || !occupation_2 || occupation_1.value === occupation_2.value || loading"
-                        ></compare-button>
-                      </div>
+                      ></compare-button>
                   </div>
               </div>
           </div>

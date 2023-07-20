@@ -52746,8 +52746,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -85817,24 +85815,17 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group row padding-x-15" },
-                  [
-                    _c("compare-button", {
-                      attrs: {
-                        isLoading: _vm.loading,
-                        onClick: _vm.compare,
-                        isDisabled:
-                          !_vm.occupation_1 ||
-                          !_vm.occupation_2 ||
-                          _vm.occupation_1.value === _vm.occupation_2.value ||
-                          _vm.loading
-                      }
-                    })
-                  ],
-                  1
-                )
+                _c("compare-button", {
+                  attrs: {
+                    isLoading: _vm.loading,
+                    onClick: _vm.compare,
+                    isDisabled:
+                      !_vm.occupation_1 ||
+                      !_vm.occupation_2 ||
+                      _vm.occupation_1.value === _vm.occupation_2.value ||
+                      _vm.loading
+                  }
+                })
               ],
               1
             )
@@ -86401,6 +86392,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CompareButton",
@@ -86428,25 +86421,27 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "button",
-    {
-      staticClass: "btn mt-2",
-      attrs: { disabled: _vm.isDisabled },
-      on: {
-        click: function($event) {
-          $event.preventDefault()
-          return _vm.onClick.apply(null, arguments)
+  return _c("div", { staticClass: "form-group row padding-x-15" }, [
+    _c(
+      "button",
+      {
+        staticClass: "btn mt-2",
+        attrs: { disabled: _vm.isDisabled },
+        on: {
+          click: function($event) {
+            $event.preventDefault()
+            return _vm.onClick.apply(null, arguments)
+          }
         }
-      }
-    },
-    [
-      _vm.isLoading
-        ? [_c("i", { staticClass: "fa fa-refresh fa-spin" })]
-        : [_vm._v("\n    Compare\n  ")]
-    ],
-    2
-  )
+      },
+      [
+        _vm.isLoading
+          ? [_c("i", { staticClass: "fa fa-refresh fa-spin" })]
+          : [_vm._v("\n      Compare\n    ")]
+      ],
+      2
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
