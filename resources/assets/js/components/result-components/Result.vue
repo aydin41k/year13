@@ -1,8 +1,5 @@
 <template>
     <div class="result-container py-4">
-        <div class="result-caption">
-            Similarity is <span class="similarity-percent">{{ match }}%</span>
-        </div>
         <ResultChart :occupation_data="occupation_data"></ResultChart>
         <ResultTable :occupation_data="occupation_data"></ResultTable>
         <ResultFooter :occupation_data="occupation_data"></ResultFooter>
@@ -23,16 +20,19 @@
     }
 </script>
 
-<style lang="scss" scoped>
-.result-container {
-  .result-caption {
-    font-size: 2em;
-  }
-  .similarity-percent {
-    background-color: #6a67ff;
-    color: #ffffff;
-    padding: 0.2em 0.5em;
-    border-radius: 0.5em;
-  }
-}
+<style>
+    .subheader {
+      font-size: 26px;
+      line-height: 1.25;
+      color: #00328d;
+      margin: 2em auto 1.5em;
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+    }
+    @media screen and (min-width: 768px) {
+      .subsection-container {
+        margin: 5em auto;
+      }
+    }
 </style>
