@@ -87,8 +87,8 @@ class OnetOccupationParser implements OccupationParser
         $match = $this->getMatch($occupation_1_skill_values, $occupation_2_skill_values);
 
         return [
-            'occupation_1' => $occupation_1,
-            'occupation_2' => $occupation_2,
+            'occupation_1' => $occupation_1_skill_values,
+            'occupation_2' => $occupation_2_skill_values,
             'match' => $match
         ];
     }
