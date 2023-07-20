@@ -45,9 +45,12 @@
         &.single {
           .selectize-input {
               border-radius: 0.5rem !important;
+              padding-right: 30px !important;
+              color: rgb(1,51,143)!important;
           }
           .selectize-dropdown {
               font-size: 1rem;
+              color: rgb(1,51,143)!important;
           }
         }
     }

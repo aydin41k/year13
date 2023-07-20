@@ -44,6 +44,17 @@ We appreciate the time you spend and we promise to get back to you with a review
 - Disabled comparing the occupation with itself
 
 #### Assumptions and Decisions
-- No automated front-end or back-end testing (unit, feature or integration testing) was done as per the requirements
-- Authentication/authorisation is not implemented as it is outside the scope of the assignment
-- Enforced and used PHP 7.4, as was told in the specs
+
+**Did not upgrade the frameworks**
+
+I enforced and used PHP 7.4, as was told in the specs; correspondingly, did not upgrade from Laravel 5.5. Also, used Node 12.22 and corresponding older versions of the packages (including NPM).
+This was a conscious decision; upgrading a framework should not be taken lightly and should not go ahead before agreeing with the stakeholders. Different plugins, integrations or even the hardware may depend on
+the older versions of the frameworks. Also, upgrading the framework may introduce new bugs and backward-incompatibility issues, which is clearly outside the scope of this assignment.
+
+**Testing**
+
+No automated front-end or back-end testing (unit, feature or integration testing) was done as per the requirements. Otherwise, I would not ship out code that is not thoroughly tested.
+
+**Authentication**
+
+Authentication/authorisation is not implemented as it is outside the scope of the assignment.
