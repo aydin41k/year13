@@ -8,8 +8,8 @@
           <div class="row">
               <div class="col-12 text-center">
                   <div class="form">
-                      <select-occupation v-model="occupation_1" title="Occupation 1"></select-occupation>
-                      <select-occupation v-model="occupation_2" title="Occupation 2"></select-occupation>
+                      <select-occupation v-model="occupation_1" label="Occupation 1"></select-occupation>
+                      <select-occupation v-model="occupation_2" label="Occupation 2"></select-occupation>
                       <compare-button
                             :isLoading="loading"
                             :onClick="compare"
