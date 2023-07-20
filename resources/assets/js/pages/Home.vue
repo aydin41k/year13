@@ -8,36 +8,13 @@
           <div class="row">
               <div class="col-12 text-center">
                   <div class="form">
-                      <div class="form-group row">
-                          <div class="padding-x-15">
-                              <label>Occupation 1</label>
-                          </div>
-                          <div class="col-12 col-md-8">
-                              <select-occupation v-model="occupation_1"></select-occupation>
-                          </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="padding-x-15">
-                            <label>Occupation 2</label>
-                        </div>
-                        <div class="col-12 col-md-8">
-                            <select-occupation v-model="occupation_2"></select-occupation>
-                        </div>
-                      </div>
-                      <div class="form-group row padding-x-15">
-                          <button
-                              class="btn mt-2"
-                              @click.prevent="compare"
-                              :disabled="!occupation_1 || !occupation_2 || occupation_1.value === occupation_2.value || loading"
-                          >
-                              <template v-if="loading">
-                                  <i class="fa fa-refresh fa-spin"></i>
-                              </template>
-                              <template v-else>
-                                  Compare
-                              </template>
-                          </button>
-                      </div>
+                      <select-occupation v-model="occupation_1" title="Occupation 1"></select-occupation>
+                      <select-occupation v-model="occupation_2" title="Occupation 2"></select-occupation>
+                      <compare-button
+                            :isLoading="loading"
+                            :onClick="compare"
+                            :isDisabled="!occupation_1 || !occupation_2 || occupation_1.value === occupation_2.value || loading"
+                      ></compare-button>
                   </div>
               </div>
           </div>
@@ -70,13 +47,15 @@
 </template>
 
 <script>
-    import SelectOccupation from '../components/form-controls/SelectOccupation';
+    import CompareButton from "../components/form-controls/CompareButton.vue";
     import Result from "../components/result-components/Result.vue";
     import ResultMatch from "../components/result-components/ResultMatch.vue";
+    import SelectOccupation from '../components/form-controls/SelectOccupation';
 
     export default {
         name: 'home-page',
         components: {
+            CompareButton,
             Result,
             ResultMatch,
             SelectOccupation
@@ -126,7 +105,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     .form-group {
         display: flex;
         align-items: center;

@@ -2,7 +2,7 @@
   <div class="heading">
     <Year13Logo></Year13Logo>
     <h1>Occompare</h1>
-    <small>Compare two selected occupations in terms of Skills using ONET data</small>
+    <small>Compare two selected occupations in terms of Skills using O*NET data</small>
     <hr/>
   </div>
 </template>

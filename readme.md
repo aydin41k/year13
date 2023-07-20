@@ -58,3 +58,7 @@ No automated front-end or back-end testing (unit, feature or integration testing
 **Authentication**
 
 Authentication/authorisation is not implemented as it is outside the scope of the assignment.
+
+#### Demo
+
+The script is uploaded to http://year13.salimov.site for demo purposes.

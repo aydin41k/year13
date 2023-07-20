@@ -52605,19 +52605,19 @@ var routes = [{
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(47)
+  __webpack_require__(321)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(50)
 /* template */
-var __vue_template__ = __webpack_require__(79)
+var __vue_template__ = __webpack_require__(306)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-440dff1c"
+var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -52650,46 +52650,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(48);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(3)("49ba81ed", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-440dff1c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-440dff1c\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.form-group[data-v-440dff1c] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.form-group label[data-v-440dff1c] {\n    text-align: left;\n    display: block;\n    margin-bottom: 0.2rem;\n}\n.form-group button[data-v-440dff1c] {\n    background-color: #00328d;\n    color: #ffffff;\n}\n.form-group button[data-v-440dff1c]:hover {\n      color: #d2d2d2;\n}\n.padding-x-15[data-v-440dff1c] {\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.result-match-container[data-v-440dff1c] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 47 */,
+/* 48 */,
 /* 49 */
 /***/ (function(module, exports) {
 
@@ -52728,12 +52690,14 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_form_controls_SelectOccupation__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_form_controls_SelectOccupation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_form_controls_SelectOccupation__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_form_controls_CompareButton_vue__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_form_controls_CompareButton_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_form_controls_CompareButton_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_result_components_Result_vue__ = __webpack_require__(285);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_result_components_Result_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_result_components_Result_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_result_components_ResultMatch_vue__ = __webpack_require__(307);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_result_components_ResultMatch_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_result_components_ResultMatch_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_form_controls_SelectOccupation__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_form_controls_SelectOccupation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_form_controls_SelectOccupation__);
 //
 //
 //
@@ -52782,29 +52746,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -52813,9 +52755,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'home-page',
     components: {
+        CompareButton: __WEBPACK_IMPORTED_MODULE_0__components_form_controls_CompareButton_vue___default.a,
         Result: __WEBPACK_IMPORTED_MODULE_1__components_result_components_Result_vue___default.a,
         ResultMatch: __WEBPACK_IMPORTED_MODULE_2__components_result_components_ResultMatch_vue___default.a,
-        SelectOccupation: __WEBPACK_IMPORTED_MODULE_0__components_form_controls_SelectOccupation___default.a
+        SelectOccupation: __WEBPACK_IMPORTED_MODULE_3__components_form_controls_SelectOccupation___default.a
     },
     data: function data() {
         return {
@@ -53031,6 +52974,13 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -53049,7 +52999,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
     props: {
         value: {
             default: null
-        }
+        },
+        title: String
     },
     watch: {
         selected: function selected() {
@@ -53884,30 +53835,45 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "selectize",
-    {
-      model: {
-        value: _vm.selected,
-        callback: function($$v) {
-          _vm.selected = $$v
-        },
-        expression: "selected"
-      }
-    },
-    [
-      _c("option", { domProps: { value: null } }, [_vm._v("Please select")]),
-      _vm._v(" "),
-      _vm._l(_vm.occupations, function(occupation, index) {
-        return _c(
-          "option",
-          { key: index, domProps: { value: occupation.code } },
-          [_vm._v(_vm._s(occupation.title))]
+  return _c("div", { staticClass: "form-group row" }, [
+    _c("div", { staticClass: "padding-x-15" }, [
+      _c("label", { attrs: { for: _vm.title } }, [_vm._v(_vm._s(_vm.title))])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "col-12 col-md-8" },
+      [
+        _c(
+          "selectize",
+          {
+            model: {
+              value: _vm.selected,
+              callback: function($$v) {
+                _vm.selected = $$v
+              },
+              expression: "selected"
+            }
+          },
+          [
+            _c("option", { domProps: { value: null } }, [
+              _vm._v("Please select")
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.occupations, function(occupation, index) {
+              return _c(
+                "option",
+                { key: index, domProps: { value: occupation.code } },
+                [_vm._v(_vm._s(occupation.title))]
+              )
+            })
+          ],
+          2
         )
-      })
-    ],
-    2
-  )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -53936,176 +53902,7 @@ if (false) {
 /* 76 */,
 /* 77 */,
 /* 78 */,
-/* 79 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container py-3" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-12 col-md-6" }, [
-        _c("div", { staticClass: "row mb-4 padding-x-15" }, [
-          _vm._v(
-            "\n          Please select two Occupations from above and click Compare\n      "
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-12 text-center" }, [
-            _c("div", { staticClass: "form" }, [
-              _c("div", { staticClass: "form-group row" }, [
-                _vm._m(0),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-12 col-md-8" },
-                  [
-                    _c("select-occupation", {
-                      model: {
-                        value: _vm.occupation_1,
-                        callback: function($$v) {
-                          _vm.occupation_1 = $$v
-                        },
-                        expression: "occupation_1"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group row" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-12 col-md-8" },
-                  [
-                    _c("select-occupation", {
-                      model: {
-                        value: _vm.occupation_2,
-                        callback: function($$v) {
-                          _vm.occupation_2 = $$v
-                        },
-                        expression: "occupation_2"
-                      }
-                    })
-                  ],
-                  1
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group row padding-x-15" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn mt-2",
-                    attrs: {
-                      disabled:
-                        !_vm.occupation_1 ||
-                        !_vm.occupation_2 ||
-                        _vm.occupation_1.value === _vm.occupation_2.value ||
-                        _vm.loading
-                    },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.compare.apply(null, arguments)
-                      }
-                    }
-                  },
-                  [
-                    _vm.loading
-                      ? [_c("i", { staticClass: "fa fa-refresh fa-spin" })]
-                      : [
-                          _vm._v(
-                            "\n                              Compare\n                          "
-                          )
-                        ]
-                  ],
-                  2
-                )
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row" },
-          [
-            _vm.loading
-              ? [
-                  _c("div", { staticClass: "col-12" }, [
-                    _vm._v("\n              Please wait...\n            ")
-                  ])
-                ]
-              : _vm._e()
-          ],
-          2
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-12 col-md-6 result-match-container" },
-        [
-          _vm.match && !_vm.loading
-            ? [_c("ResultMatch", { attrs: { match: _vm.match } })]
-            : _vm._e()
-        ],
-        2
-      )
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      [
-        _vm.match && !_vm.loading
-          ? [
-              _c("Result", {
-                attrs: {
-                  occupation_data: _vm.occupation_data,
-                  match: _vm.match
-                }
-              })
-            ]
-          : _vm._e()
-      ],
-      2
-    )
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "padding-x-15" }, [
-      _c("label", [_vm._v("Occupation 1")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "padding-x-15" }, [
-      _c("label", [_vm._v("Occupation 2")])
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-440dff1c", module.exports)
-  }
-}
-
-/***/ }),
+/* 79 */,
 /* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -54603,7 +54400,7 @@ var render = function() {
       _vm._v(" "),
       _c("small", [
         _vm._v(
-          "Compare two selected occupations in terms of Skills using ONET data"
+          "Compare two selected occupations in terms of Skills using O*NET data"
         )
       ]),
       _vm._v(" "),
@@ -85906,7 +85703,7 @@ var render = function() {
   return _c("div", { staticClass: "result-footer" }, [
     _c("p", { staticClass: "title" }, [
       _vm._v(
-        "\n        If you would like to get more information about these occupations, please follow the links below to navigate to the ONET website.\n    "
+        "\n        If you would like to get more information about these occupations, please follow the links below to navigate to the O*NET website.\n    "
       )
     ]),
     _vm._v(" "),
@@ -85974,7 +85771,124 @@ if (false) {
 /* 303 */,
 /* 304 */,
 /* 305 */,
-/* 306 */,
+/* 306 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container py-3" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 col-md-6" }, [
+        _c("div", { staticClass: "row mb-4 padding-x-15" }, [
+          _vm._v(
+            "\n          Please select two Occupations from above and click Compare\n      "
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-12 text-center" }, [
+            _c(
+              "div",
+              { staticClass: "form" },
+              [
+                _c("select-occupation", {
+                  attrs: { title: "Occupation 1" },
+                  model: {
+                    value: _vm.occupation_1,
+                    callback: function($$v) {
+                      _vm.occupation_1 = $$v
+                    },
+                    expression: "occupation_1"
+                  }
+                }),
+                _vm._v(" "),
+                _c("select-occupation", {
+                  attrs: { title: "Occupation 2" },
+                  model: {
+                    value: _vm.occupation_2,
+                    callback: function($$v) {
+                      _vm.occupation_2 = $$v
+                    },
+                    expression: "occupation_2"
+                  }
+                }),
+                _vm._v(" "),
+                _c("compare-button", {
+                  attrs: {
+                    isLoading: _vm.loading,
+                    onClick: _vm.compare,
+                    isDisabled:
+                      !_vm.occupation_1 ||
+                      !_vm.occupation_2 ||
+                      _vm.occupation_1.value === _vm.occupation_2.value ||
+                      _vm.loading
+                  }
+                })
+              ],
+              1
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row" },
+          [
+            _vm.loading
+              ? [
+                  _c("div", { staticClass: "col-12" }, [
+                    _vm._v("\n              Please wait...\n            ")
+                  ])
+                ]
+              : _vm._e()
+          ],
+          2
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-12 col-md-6 result-match-container" },
+        [
+          _vm.match && !_vm.loading
+            ? [_c("ResultMatch", { attrs: { match: _vm.match } })]
+            : _vm._e()
+        ],
+        2
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      [
+        _vm.match && !_vm.loading
+          ? [
+              _c("Result", {
+                attrs: {
+                  occupation_data: _vm.occupation_data,
+                  match: _vm.match
+                }
+              })
+            ]
+          : _vm._e()
+      ],
+      2
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-440dff1c", module.exports)
+  }
+}
+
+/***/ }),
 /* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -86367,6 +86281,175 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-36eced41", module.exports)
+  }
+}
+
+/***/ }),
+/* 321 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(322);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("c976048c", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-440dff1c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-440dff1c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Home.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 322 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.form-group {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.form-group label {\n    text-align: left;\n    display: block;\n    margin-bottom: 0.2rem;\n}\n.form-group button {\n    background-color: #00328d;\n    color: #ffffff;\n}\n.form-group button:hover {\n      color: #d2d2d2;\n}\n.padding-x-15 {\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.result-match-container {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 323 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(324)
+/* template */
+var __vue_template__ = __webpack_require__(325)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/form-controls/CompareButton.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1905aa20", Component.options)
+  } else {
+    hotAPI.reload("data-v-1905aa20", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 324 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "CompareButton",
+  props: {
+    isLoading: {
+      type: Boolean,
+      required: true
+    },
+    onClick: {
+      type: Function,
+      required: true
+    },
+    isDisabled: {
+      type: Boolean,
+      required: true
+    }
+  }
+});
+
+/***/ }),
+/* 325 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "form-group row padding-x-15" }, [
+    _c(
+      "button",
+      {
+        staticClass: "btn mt-2",
+        attrs: { disabled: _vm.isDisabled },
+        on: {
+          click: function($event) {
+            $event.preventDefault()
+            return _vm.onClick.apply(null, arguments)
+          }
+        }
+      },
+      [
+        _vm.isLoading
+          ? [_c("i", { staticClass: "fa fa-refresh fa-spin" })]
+          : [_vm._v("\n      Compare\n    ")]
+      ],
+      2
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-1905aa20", module.exports)
   }
 }
 
