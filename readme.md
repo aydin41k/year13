@@ -1,12 +1,12 @@
 
-## Occompare
+# Occompare
 
-### Task
+## Task
 Compare two selected occupations in terms of Skills using ONET data. 
 
 The zipped bundle provides the bare-minimum Laravel and Vue bootstrapping for your convenience. The parser service has been implemented to return a list of core skills along with their importance value from ONET. You are expected to come up with a *matching algorithm* that shows the similarity between the two occupations selected, in percentage value. We estimate it will take around 2 hours to complete, give or take.
 
-##### What will we assess?
+#### What will we assess?
 - Your coding practices, standards, and architecture
 - Performance optimization throughout the application
 - The efficiency of the algorithm
@@ -15,17 +15,17 @@ The zipped bundle provides the bare-minimum Laravel and Vue bootstrapping for yo
 
 We DO NOT expect you to write unit tests.
 
-##### How to submit?
+#### How to submit?
 Upload your work to a git repository and send us the link. We need to be able to download the repository.
 
-##### What to expect after submission?
+#### What to expect after submission?
 We appreciate the time you spend and we promise to get back to you with a review of your code as soon as we can. The review will outline what we liked and what we did not. You are NOT expected to make any further revisions to your code after the review.
 
 *All occupations data are being parsed from ONET using occupation code e.g. https://www.onetonline.org/link/details/11-9199.01*
 
-### Solution
+## Solution
 
-#### Backend
+### Backend
 - Refactored existing code
   - Removed unnecessary code and files: Any code that is not being used at the moment and doesn't have a placeholder for an upcoming usage should be removed; it can always be restored from version control if needed
     - Unused routes
@@ -39,11 +39,15 @@ We appreciate the time you spend and we promise to get back to you with a review
     - Count how many skills carry similar importance in both occupations (similarity/proximity value defined in the service and could later be moved to the database)
     - Calculate the percentage of the similar skills
 
-#### Frontend
+### Frontend
 - Moved the assignee name ("Completed by...") to an `env` variable for re-usability (SaaS/open source approach)
 - Disabled comparing the occupation with itself
+- Re-designed the layout
+- Installed the vue-charjs and chart.js packages, added a Chart.js chart to enhance the comparison
+- Added a table with a full list of skills and their importance for each occupation
+- Added links to the O*NET website for each occupation
 
-#### Assumptions and Decisions
+### Assumptions and Decisions
 
 **Upgrading the frameworks**
 
@@ -63,6 +67,10 @@ Authentication/authorisation is not implemented as it is outside the scope of th
 
 I decided not to implement dynamic fetching of the occupation list from the ONET website, as it would not add much value to the assignment. And from the business viewpoint, the list of occupations is not something that changes often. They way I would resolve this is, for example, to set up a daily cron to fetch and save the list every midnight. Dynamic fething is excessive for this case.
 
-#### Demo
+**Fallback messages/Form reset**
 
-The script is uploaded to http://year13.salimov.site for demo purposes.
+Normally, before shipping out an application I make sure that the users are alerted with clear messages in case things don't go to the plan. However, I did not implement any explicit error expectation or user alerting with this application.
+
+### Live Demo
+
+The application is live at https://year13.salimov.site for demo purposes.
