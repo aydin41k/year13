@@ -26,7 +26,7 @@
         },
         watch: {
             selected() {
-                this.$emit('input', this.selected);
+                this.$emit('input', {title: this.$el.innerText, value: this.selected});
             }
         },
         async created() {
@@ -39,4 +39,16 @@
 
 <style lang="scss" scoped>
     @import '~selectize/dist/css/selectize.default.css';
+</style>
+<style lang="scss">
+    .selectize-control {
+        &.single {
+          .selectize-input {
+              border-radius: 0.5rem !important;
+          }
+          .selectize-dropdown {
+              font-size: 1rem;
+          }
+        }
+    }
 </style>

@@ -1,6 +1,8 @@
 <template>
     <div class="footer-bar">
-        This assignment is completed by: {{ name }}
+        © 2023 This assignment is completed as a recruitment task for Year13.
+        <br/>
+        Author: {{ name }}
     </div>
 </template>
 
@@ -21,7 +23,7 @@
         text-align: center;
         color: #fff;
         font-size: 0.8rem;
-        padding: 3px 1rem;
+        padding: 0.5rem 1rem;
         position: fixed;
         bottom: 0;
         width: 100%;

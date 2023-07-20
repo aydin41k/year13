@@ -10,7 +10,7 @@
 
 <style>
     .body {
-        --brand-color: #fbb040;
+        --brand-color: #00328d;
     }
     .fade-enter-active, .fade-leave-active {
         transition: opacity .5s

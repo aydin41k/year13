@@ -41,8 +41,9 @@ We appreciate the time you spend and we promise to get back to you with a review
 
 #### Frontend
 - Moved the assignee name ("Completed by...") to an `env` variable for re-usability (SaaS/open source approach)
+- Disabled comparing the occupation with itself
 
 #### Assumptions and Decisions
-- No automated testing (unit, feature or integration testing) was done as per the requirements
+- No automated front-end or back-end testing (unit, feature or integration testing) was done as per the requirements
 - Authentication/authorisation is not implemented as it is outside the scope of the assignment
 - Enforced and used PHP 7.4, as was told in the specs

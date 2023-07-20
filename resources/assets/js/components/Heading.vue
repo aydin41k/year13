@@ -3,6 +3,7 @@
     <Year13Logo></Year13Logo>
     <h1>Occompare</h1>
     <small>Compare two selected occupations in terms of Skills using ONET data</small>
+    <hr/>
   </div>
 </template>
 
