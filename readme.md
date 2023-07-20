@@ -45,7 +45,7 @@ We appreciate the time you spend and we promise to get back to you with a review
 
 #### Assumptions and Decisions
 
-**Did not upgrade the frameworks**
+**Upgrading the frameworks**
 
 I enforced and used PHP 7.4, as was told in the specs; correspondingly, did not upgrade from Laravel 5.5. Also, used Node 12.22 and corresponding older versions of the packages (including NPM).
 This was a conscious decision; upgrading a framework should not be taken lightly and should not go ahead before agreeing with the stakeholders. Different plugins, integrations or even the hardware may depend on
@@ -58,6 +58,10 @@ No automated front-end or back-end testing (unit, feature or integration testing
 **Authentication**
 
 Authentication/authorisation is not implemented as it is outside the scope of the assignment.
+
+**Dynamic fetching of the occupation list**
+
+I decided not to implement dynamic fetching of the occupation list from the ONET website, as it would not add much value to the assignment. And from the business viewpoint, the list of occupations is not something that changes often. They way I would resolve this is, for example, to set up a daily cron to fetch and save the list every midnight. Dynamic fething is excessive for this case.
 
 #### Demo
 

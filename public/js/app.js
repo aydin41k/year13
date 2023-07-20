@@ -53000,11 +53000,11 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         value: {
             default: null
         },
-        title: String
+        label: String
     },
     watch: {
         selected: function selected() {
-            this.$emit('input', { title: this.$el.innerText, value: this.selected });
+            this.$emit('input', { title: this.$el.children[1].innerText, value: this.selected });
         }
     },
     created: function () {
@@ -53837,7 +53837,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "form-group row" }, [
     _c("div", { staticClass: "padding-x-15" }, [
-      _c("label", { attrs: { for: _vm.title } }, [_vm._v(_vm._s(_vm.title))])
+      _c("label", { attrs: { for: _vm.label } }, [_vm._v(_vm._s(_vm.label))])
     ]),
     _vm._v(" "),
     _c(
@@ -85794,7 +85794,7 @@ var render = function() {
               { staticClass: "form" },
               [
                 _c("select-occupation", {
-                  attrs: { title: "Occupation 1" },
+                  attrs: { label: "Occupation 1" },
                   model: {
                     value: _vm.occupation_1,
                     callback: function($$v) {
@@ -85805,7 +85805,7 @@ var render = function() {
                 }),
                 _vm._v(" "),
                 _c("select-occupation", {
-                  attrs: { title: "Occupation 2" },
+                  attrs: { label: "Occupation 2" },
                   model: {
                     value: _vm.occupation_2,
                     callback: function($$v) {

@@ -1,7 +1,7 @@
 <template>
   <div class="form-group row">
     <div class="padding-x-15">
-      <label :for=title>{{ title }}</label>
+      <label :for=label>{{ label }}</label>
     </div>
     <div class="col-12 col-md-8">
       <selectize v-model="selected">
@@ -30,11 +30,11 @@
             value: {
                 default: null
             },
-            title: String,
+            label: String,
         },
         watch: {
             selected() {
-                this.$emit('input', {title: this.$el.innerText, value: this.selected});
+                this.$emit('input', {title: this.$el.children[1].innerText, value: this.selected});
             }
         },
         async created() {
