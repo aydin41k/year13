@@ -1,8 +1,15 @@
 <template>
-    <selectize v-model="selected">
+  <div class="form-group row">
+    <div class="padding-x-15">
+      <label :for=title>{{ title }}</label>
+    </div>
+    <div class="col-12 col-md-8">
+      <selectize v-model="selected">
         <option :value="null">Please select</option>
         <option v-for="(occupation, index) in occupations" :key="index" :value="occupation.code">{{ occupation.title }}</option>
-    </selectize>
+      </selectize>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -22,7 +29,8 @@
         props: {
             value: {
                 default: null
-            }
+            },
+            title: String,
         },
         watch: {
             selected() {

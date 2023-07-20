@@ -1,7 +1,7 @@
 <template>
     <div class="result-footer">
         <p class="title">
-            If you would like to get more information about these occupations, please follow the links below to navigate to the ONET website.
+            If you would like to get more information about these occupations, please follow the links below to navigate to the O*NET website.
         </p>
         <p class="link">
             <a v-bind:href="'https://www.onetonline.org/link/details/' + occupation_data.occupation_1.code" target="_blank">

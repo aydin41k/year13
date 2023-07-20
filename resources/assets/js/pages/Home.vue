@@ -8,22 +8,8 @@
           <div class="row">
               <div class="col-12 text-center">
                   <div class="form">
-                      <div class="form-group row">
-                          <div class="padding-x-15">
-                              <label>Occupation 1</label>
-                          </div>
-                          <div class="col-12 col-md-8">
-                              <select-occupation v-model="occupation_1"></select-occupation>
-                          </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="padding-x-15">
-                            <label>Occupation 2</label>
-                        </div>
-                        <div class="col-12 col-md-8">
-                            <select-occupation v-model="occupation_2"></select-occupation>
-                        </div>
-                      </div>
+                      <select-occupation v-model="occupation_1" title="Occupation 1"></select-occupation>
+                      <select-occupation v-model="occupation_2" title="Occupation 2"></select-occupation>
                       <div class="form-group row padding-x-15">
                           <button
                               class="btn mt-2"
@@ -126,7 +112,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     .form-group {
         display: flex;
         align-items: center;
