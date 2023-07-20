@@ -52690,12 +52690,14 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_form_controls_SelectOccupation__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_form_controls_SelectOccupation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_form_controls_SelectOccupation__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_form_controls_CompareButton_vue__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_form_controls_CompareButton_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_form_controls_CompareButton_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_result_components_Result_vue__ = __webpack_require__(285);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_result_components_Result_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_result_components_Result_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_result_components_ResultMatch_vue__ = __webpack_require__(307);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_result_components_ResultMatch_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_result_components_ResultMatch_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_form_controls_SelectOccupation__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_form_controls_SelectOccupation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_form_controls_SelectOccupation__);
 //
 //
 //
@@ -52746,13 +52748,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
+
 
 
 
@@ -52761,9 +52757,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'home-page',
     components: {
+        CompareButton: __WEBPACK_IMPORTED_MODULE_0__components_form_controls_CompareButton_vue___default.a,
         Result: __WEBPACK_IMPORTED_MODULE_1__components_result_components_Result_vue___default.a,
         ResultMatch: __WEBPACK_IMPORTED_MODULE_2__components_result_components_ResultMatch_vue___default.a,
-        SelectOccupation: __WEBPACK_IMPORTED_MODULE_0__components_form_controls_SelectOccupation___default.a
+        SelectOccupation: __WEBPACK_IMPORTED_MODULE_3__components_form_controls_SelectOccupation___default.a
     },
     data: function data() {
         return {
@@ -85820,37 +85817,24 @@ var render = function() {
                   }
                 }),
                 _vm._v(" "),
-                _c("div", { staticClass: "form-group row padding-x-15" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn mt-2",
+                _c(
+                  "div",
+                  { staticClass: "form-group row padding-x-15" },
+                  [
+                    _c("compare-button", {
                       attrs: {
-                        disabled:
+                        isLoading: _vm.loading,
+                        onClick: _vm.compare,
+                        isDisabled:
                           !_vm.occupation_1 ||
                           !_vm.occupation_2 ||
                           _vm.occupation_1.value === _vm.occupation_2.value ||
                           _vm.loading
-                      },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.compare.apply(null, arguments)
-                        }
                       }
-                    },
-                    [
-                      _vm.loading
-                        ? [_c("i", { staticClass: "fa fa-refresh fa-spin" })]
-                        : [
-                            _vm._v(
-                              "\n                              Compare\n                          "
-                            )
-                          ]
-                    ],
-                    2
-                  )
-                ])
+                    })
+                  ],
+                  1
+                )
               ],
               1
             )
@@ -86348,6 +86332,131 @@ exports.push([module.i, "\n.form-group {\n  display: -webkit-box;\n  display: -m
 
 // exports
 
+
+/***/ }),
+/* 323 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(324)
+/* template */
+var __vue_template__ = __webpack_require__(325)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/form-controls/CompareButton.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1905aa20", Component.options)
+  } else {
+    hotAPI.reload("data-v-1905aa20", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 324 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "CompareButton",
+  props: {
+    isLoading: {
+      type: Boolean,
+      required: true
+    },
+    onClick: {
+      type: Function,
+      required: true
+    },
+    isDisabled: {
+      type: Boolean,
+      required: true
+    }
+  }
+});
+
+/***/ }),
+/* 325 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "button",
+    {
+      staticClass: "btn mt-2",
+      attrs: { disabled: _vm.isDisabled },
+      on: {
+        click: function($event) {
+          $event.preventDefault()
+          return _vm.onClick.apply(null, arguments)
+        }
+      }
+    },
+    [
+      _vm.isLoading
+        ? [_c("i", { staticClass: "fa fa-refresh fa-spin" })]
+        : [_vm._v("\n    Compare\n  ")]
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-1905aa20", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
